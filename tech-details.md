@@ -11,9 +11,9 @@
 
 Windows:
 * Скачать и установить Python
-* Скачать и установить FFmpeg: https://github.com/BtbN/FFmpeg-Builds/releases\
+* Скачать и установить FFmpeg: https://github.com/BtbN/FFmpeg-Builds/releases \
 Убедиться, что путь к его бинарникам находится в PATH
-* Установить PyTorch: https://pytorch.org\
+* Установить PyTorch: https://pytorch.org \
 Секция "Install PyTorch"
 * Установить Whisper: `pip install -U openai-whisper`
 
