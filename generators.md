@@ -5,7 +5,6 @@
   - [Персонажи](#персонажи)
     - [НПС](#нпс)
     - [Аватарки и токены](#аватарки-и-токены)
-    - [Книги заклинаний](#книги-заклинаний)
     - [ИПС](#ипс)
   - [Столкновения](#столкновения)
   - [Добыча](#добыча)
@@ -25,7 +24,6 @@
     - [Генераторы карт](#генераторы-карт)
     - [Наполнение и декор](#наполнение-и-декор)
     - [Назначение комнат](#назначение-комнат)
-  - [Сл. встречи](#сл-встречи)
   - [Местность](#местность)
   - [Фракции](#фракции)
   - [Рынок](#рынок)
@@ -59,10 +57,10 @@
 * Генератор описания НПС с npcgenerator	http://www.npcgenerator.com/
 * Генератор НПС на донжоне 1, для 5e	https://donjon.bin.sh/5e/random/#type=npc
 * Генератор НПС на донжоне 2, общий	https://donjon.bin.sh/fantasy/random/#type=npc	
+* Генератор НПС с dm-stuff http://dm-stuff.ru/generator-characters
 * Генератор описания НПС на штормовой башне	https://stormtower.ru/generator/generator-statistov.html	
 * Генератор предыстории персонажа с 5etools	https://5e.tools/lifegen.html
 * Статистика монстра или НПС на CR	https://5e.tools/crcalculator.html#11,17,69,8,false,Medium,50,10,false,0,false,0,mf-avoidance:true
-* Генератор НПС с dm-stuff http://dm-stuff.ru/generator-characters
 * Генератор злодеев с kassoon 
 (в двух словах)	https://www.kassoon.com/dnd/villain-generator/
 * Методы злодеев (ДМГ)	https://5e.tools/tables.html#villains%3b%20villain's%20methods_dmg
@@ -77,12 +75,7 @@
 
 * Генератор аватарки гуманоидных 
 персонажей с dmheroes	http://www.dmheroes.com/
-* PortraitWorks (android, pre-order)	https://portraitworkshop.squarespace.com/
-	
-### Книги заклинаний	
-	
-* Генератор списка заклинаний в книге заклинаний
-волшебника	https://donjon.bin.sh/5e/random/#type=spellbook
+* PortraitWorks (android, apple) https://www.portrait.works/
 	
 ### ИПС	
 	
@@ -96,13 +89,15 @@
 
 ## Столкновения
 
-* kobold fight club	http://kobold.club/fight/#/encounter-builder
 * donjon	https://donjon.bin.sh/5e/random/#type=encounter
+* dndbeyond encounter builder	https://www.dndbeyond.com/encounter-builder
+* kobold fight club	http://kobold.club/fight/#/encounter-builder
 * Случайные таблицы 
 столкновений с 5etools	https://5e.tools/encountergen.html#coastal_xge_5-10
-* dndbeyond encounter builder	https://www.dndbeyond.com/encounter-builder
 * "Чудовища по окружающей
 среде, ДМГ, стр. 303"	
+* Генератор случайных встреч в дороге	http://stormtower.ru/generator/generator-sluchaynyih-vstrech-v-doroge.html
+* Случайные встречи в сельской местности	http://stormtower.ru/generator/sluchaynyie-vstrechi-v-selskoy-mestnosti.html
 
 
 ## Добыча
@@ -298,14 +293,6 @@ Settings -> Trace Image -> настроить положение, Scale и Opaci
 	https://5e.tools/tables.html#dungeon%20location%3b%20exotic%20location_dmg
 
 
-## Сл. встречи
-
-* Генератор случайных встреч в дороге	http://stormtower.ru/generator/generator-sluchaynyih-vstrech-v-doroge.html
-* Случайные встречи в сельской местности	http://stormtower.ru/generator/sluchaynyie-vstrechi-v-selskoy-mestnosti.html
-* Генератор описания дикой местности 
-для дорожных встреч	https://stormtower.ru/generator/generator-terrain.html
-
-
 ## Местность
 
 * Генератор того, что встречается
@@ -316,6 +303,8 @@ Settings -> Trace Image -> настроить положение, Scale и Opaci
 * Генератор названий мест и областей 
 (а также краткая инструкция по топонимике), 
 шт. башня	http://stormtower.ru/generator/generator-nazvaniy-mest-i-oblastey.html
+* Генератор описания дикой местности 
+для дорожных встреч	https://stormtower.ru/generator/generator-terrain.html
 * Генератор областей, шт. башня	http://stormtower.ru/generator/generator-oblastey.html
 * Генератор таинственных островов, 
 шт. башня	http://stormtower.ru/generator/generator-tainstvennyih-ostrovov.html
