@@ -26,7 +26,7 @@
     - [Назначение комнат](#назначение-комнат)
   - [Местность](#местность)
   - [Фракции](#фракции)
-  - [Рынок](#рынок)
+  - [Рынок / Цены](#рынок--цены)
   - [Карты](#карты)
     - [Редакторы](#редакторы)
     - [Генераторы](#генераторы-1)
@@ -36,6 +36,7 @@
   - [Время](#время)
   - [Вода](#вода)
 
+ДМ-скрин: [dm_screen.pdf](dm_screen.pdf)
 
 ## Имена
 
@@ -343,8 +344,13 @@ Settings -> Trace Image -> настроить положение, Scale и Opaci
 * Новая организация (ДМГ)	https://5e.tools/tables.html#new%20organizations_dmg
 
 
-## Рынок
+## Рынок / Цены
 
+* Цены https://www.dndbeyond.com/equipment
+* То же, но на русском http://dm-stuff.ru/gear-catalog/?ysclid=lohr5v03lb729288602
+* То же, но на русском #2 https://ttg.club/items
+* Еда, напитки, проживание https://roll20.net/compendium/dnd5e/Expenses#content
+* Общая таблица из PHB https://dnd.su/articles/inventory/98-equipment/
 * Генератор описания рынков,
 с шторм. башни	http://stormtower.ru/generator/generator-ryinkov.html
 
