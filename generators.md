@@ -346,7 +346,8 @@ Settings -> Trace Image -> настроить положение, Scale и Opaci
 
 ## Рынок / Цены
 
-* Цены https://www.dndbeyond.com/equipment
+* Цены с 5e.tools https://5e.tools/items.html
+* Цены с dndbeyond https://www.dndbeyond.com/equipment
 * То же, но на русском http://dm-stuff.ru/gear-catalog/?ysclid=lohr5v03lb729288602
 * То же, но на русском #2 https://ttg.club/items
 * Еда, напитки, проживание https://roll20.net/compendium/dnd5e/Expenses#content
