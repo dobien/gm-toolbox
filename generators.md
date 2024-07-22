@@ -119,7 +119,7 @@
 ### Драг. камни	
 	
 * Случайные таблицы / стоимость
-драг. камней	https://dungeon.su/articles/inventory/71-dragotsennye_kamni/
+драг. камней	https://dnd.su/articles/inventory/74-treasury/
 * Генератор драг. камней на dungeons.ru
 -> Драгоценные камни	https://dungeon.su/loot/
 * Случайные таблицы драг. камней есть 
