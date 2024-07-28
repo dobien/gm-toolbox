@@ -38,6 +38,8 @@
 
 ДМ-скрин: [dm_screen.pdf](dm_screen.pdf)
 
+Ценник: https://docs.google.com/spreadsheets/d/16OB_jOjwpXqNsFXh-PzSw3QK7dkZAjj58-NEE1NoT_I/edit?gid=0#gid=0
+
 ## Имена
 
 * Генератор имён с fantasynamegenerators	https://www.fantasynamegenerators.com/dungeons-and-dragons.php
