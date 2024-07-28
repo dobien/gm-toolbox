@@ -171,7 +171,8 @@ c donjon	https://donjon.bin.sh/5e/random/#type=arcane_tome
 	
 ### Зелья	
 	
-* Результат смешивания зелий (ДМГ)	https://5e.tools/tables.html#variant%3a%20mixing%20potions%3b%20potion%20miscibility_dmg
+* Результат смешивания зелий (ДМГ)https://5e.tools/tables.html#variant%3a%20mixing%20potions%3b%20potion%20miscibility_dmg
+* Яды https://roll20.net/compendium/dnd5e/Poisons#content
 
 
 ## Ловушки
