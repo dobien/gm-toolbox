@@ -113,7 +113,7 @@ function getDescendantLocations(dv, targetLocation) {
 function show_table(dv, targetLocation) {
    // Отображаем таблицу с найденными локациями
    dv.table(["Name", "Main Info", "Image"], getDescendantLocations(dv, targetLocation));
-}
+}
 
 function run_show_table(...args) {
   let dv = args[0].arg1;
