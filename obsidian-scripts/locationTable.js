@@ -1,33 +1,30 @@
+// Функция для создания ссылки на страницу
 function getLocationName(p) {
-	let nameLink = `[[${p.file.name}|${p.file.name}]]`; // Создаем Wiki-ссылку
+    let nameLink = `[[${p.file.name}|${p.file.name}]]`; // Создаем Wiki-ссылку
     return nameLink;
 }
 
+// Функция для получения основной информации
 function getMainInfo(p) {
     let age = p.birthday ? (1491 - p.birthday) : null;
     let mainInfoParts = [];
 
     if (p.appearance || p.race) {
-	    // specialization
-	    let appearanceTitle = "";
-	    if (p.race)
-	    {
-		    appearanceTitle += `Раса: ${p.race}. `;
-	    }
-	    if (age)
-	    {
-		    appearanceTitle += `Возраст: ${age} лет. `;
-	    }
-	    if (p.profession)
-	    {
-		    appearanceTitle += `Профессия: ${p.profession}. `;
-	    }
-	    if (p.appearance)
-	    {
-		    appearanceTitle += `${p.appearance}`;
-	    }
+        let appearanceTitle = "";
+        if (p.race) {
+            appearanceTitle += `Раса: ${p.race}. `;
+        }
+        if (age) {
+            appearanceTitle += `Возраст: ${age} лет. `;
+        }
+        if (p.profession) {
+            appearanceTitle += `Профессия: ${p.profession}. `;
+        }
+        if (p.appearance) {
+            appearanceTitle += `${p.appearance}`;
+        }
 
-	    let appearanceTooltip = `<abbr title="${appearanceTitle}">View</abbr>`;
+        let appearanceTooltip = `<abbr title="${appearanceTitle}">View</abbr>`;
         mainInfoParts.push(appearanceTooltip);
     }
     if (p.personality) {
@@ -35,17 +32,18 @@ function getMainInfo(p) {
         mainInfoParts.push(personalityTooltip);
     }
     if (p.biography) {
-	    let biographyTooltip = `<abbr title="${p.biography}">Bio</abbr>`;
+        let biographyTooltip = `<abbr title="${p.biography}">Bio</abbr>`;
         mainInfoParts.push(biographyTooltip);
     }
     if (p.quests) {
-	    let questsTooltip = `<abbr title="${p.quests}">Quests</abbr>`;
+        let questsTooltip = `<abbr title="${p.quests}">Quests</abbr>`;
         mainInfoParts.push(questsTooltip);
     }
 
     return mainInfoParts.join(" / ");
 }
 
+// Функция для получения ссылок на изображения
 function getImageLinks(p) {
 	let images = [];
 	let avatar = p["avatar-image"];
@@ -55,15 +53,15 @@ function getImageLinks(p) {
     return images.join(" / ");
 }
 
-// Рекурсивная функция для проверки, является ли страница потомком исходной локации
-function isDescendant(page, targetName, visited = new Set()) {
+// Рекурсивная функция для проверки, является ли страница потомком любой из целевых локаций
+function isDescendant(page, targetNames, visited = new Set()) {
     if (!page || visited.has(page.file.path)) {
         return false;
     }
     visited.add(page.file.path);
 
-    // Проверяем, совпадает ли текущая страница с исходной локацией
-    if (page.file.name === targetName) {
+    // Если страница совпадает с любой из целевых, она не считается своим потомком
+    if (targetNames.includes(page.file.name)) {
         return true;
     }
 
@@ -88,33 +86,37 @@ function isDescendant(page, targetName, visited = new Set()) {
             parentPage = null;
         }
 
-        if (parentPage && isDescendant(parentPage, targetName, visited)) {
-            return true;
+        if (parentPage && isDescendant(parentPage, targetNames, visited)) {
+                return true;
         }
     }
 
     return false;
 }
 
-function getDescendantLocations(dv, targetLocation) {
-	// Собираем все локации, которые являются потомками исходной локации
-	let descendantLocations = dv.pages('#location')
-		.filter(p => p.file.name !== targetLocation && isDescendant(p, targetLocation))
-		.sort(p => p.file.name, 'asc')
-		.map(p => {
-			let nameLink = getLocationName(p);
-			let mainInfo = getMainInfo(p);
-			let avatarImage = getImageLinks(p);
-			return [nameLink, mainInfo, avatarImage];
-		});
-	return descendantLocations;
+// Функция для получения потомков для массива локаций
+function getDescendantLocations(dv, targetLocations) {
+    // Собираем все локации, которые являются потомками любых из целевых локаций
+    let descendantLocations = dv.pages('#location')
+        // Исключаем сами целевые локации из результатов
+        .filter(p => !targetLocations.includes(p.file.name) && isDescendant(p, targetLocations))
+        .sort(p => p.file.name, 'asc')
+        .map(p => {
+            let nameLink = getLocationName(p);
+            let mainInfo = getMainInfo(p);
+            let avatarImage = getImageLinks(p);
+            return [nameLink, mainInfo, avatarImage];
+        });
+    return descendantLocations;
 }
 
-function show_table(dv, targetLocation) {
+// Функция для отображения таблицы
+function show_table(dv, targetLocations) {
    // Отображаем таблицу с найденными локациями
-   dv.table(["Name", "Main Info", "Image"], getDescendantLocations(dv, targetLocation));
+   dv.table(["Name", "Main Info", "Image"], getDescendantLocations(dv, targetLocations));
 }
 
+// Функция для запуска отображения таблицы
 function run_show_table(...args) {
   let dv = args[0].arg1;
   let targetLocation = args[0].arg2;
