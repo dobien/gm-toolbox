@@ -44,13 +44,15 @@ function getMainInfo(p) {
 }
 
 // Функция для получения ссылок на изображения
-function getImageLinks(p) {
-	let images = [];
-	let avatar = p["avatar-image"];
-    if (avatar) {
-		images.push(`[[${avatar.path}|img]]`);
-	}
-    return images.join(" / ");
+function getImageLinks(p, basePath) {
+    let avatar = p["avatar-image"];
+    if (avatar && avatar.path) {
+        let imagePath = `${basePath}/${avatar.path}`; // Используем базовый путь хранилища
+        return `<div style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="${imagePath}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>`;
+    }
+    return ""; // Возвращаем пустую строку, если изображения нет
 }
 
 // Рекурсивная функция для проверки, является ли страница потомком любой из целевых локаций
@@ -87,7 +89,7 @@ function isDescendant(page, targetNames, visited = new Set()) {
         }
 
         if (parentPage && isDescendant(parentPage, targetNames, visited)) {
-                return true;
+            return true;
         }
     }
 
@@ -95,7 +97,7 @@ function isDescendant(page, targetNames, visited = new Set()) {
 }
 
 // Функция для получения потомков для массива локаций
-function getDescendantLocations(dv, targetLocations) {
+function getDescendantLocations(dv, targetLocations, basePath) {
     // Собираем все локации, которые являются потомками любых из целевых локаций
     let descendantLocations = dv.pages('#location')
         // Исключаем сами целевые локации из результатов
@@ -104,23 +106,24 @@ function getDescendantLocations(dv, targetLocations) {
         .map(p => {
             let nameLink = getLocationName(p);
             let mainInfo = getMainInfo(p);
-            let avatarImage = getImageLinks(p);
-            return [nameLink, mainInfo, avatarImage];
+            let avatarImage = getImageLinks(p, basePath); // Передаем basePath для формирования правильного пути
+            return [avatarImage, nameLink, mainInfo]; // Изображение первой колонкой
         });
     return descendantLocations;
 }
 
 // Функция для отображения таблицы
-function show_table(dv, targetLocations) {
+function show_table(dv, targetLocations, basePath) {
    // Отображаем таблицу с найденными локациями
-   dv.table(["Name", "Main Info", "Image"], getDescendantLocations(dv, targetLocations));
+   dv.table(["Image", "Name", "Main Info"], getDescendantLocations(dv, targetLocations, basePath)); // Изменен порядок колонок
 }
 
 // Функция для запуска отображения таблицы
 function run_show_table(...args) {
   let dv = args[0].arg1;
   let targetLocation = args[0].arg2;
-  show_table(dv, targetLocation);
+  let basePath = this.app.vault.adapter.basePath; // Получаем базовый путь к хранилищу
+  show_table(dv, targetLocation, basePath);
 }
 
-run_show_table(input)
+run_show_table(input);
